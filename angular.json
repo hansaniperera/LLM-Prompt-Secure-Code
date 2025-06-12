@@ -90,12 +90,16 @@
               }
             ],
             "styles": [
-              "src/styles.css"
-            ],
+  "src/styles.css",
+  "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a5f44fc1-a374-419b-bb7d-d9841323afe5"
   }
 }
