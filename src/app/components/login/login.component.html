@@ -1,0 +1,66 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h2>Asset Management System</h2>
+      <p>Please sign in to your account</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Error Alert -->
+      <div *ngIf="error" class="alert alert-error">
+        <span class="error-icon">⚠</span>
+        <span class="error-message">{{ error }}</span>
+        <button type="button" class="close-btn" (click)="clearError()">×</button>
+      </div>
+
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          class="form-control"
+          [class.is-invalid]="submitted && f['username'].errors"
+          placeholder="Enter your username"
+        />
+        <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+          <div *ngIf="f['username'].errors?.['required']">Username is required</div>
+          <div *ngIf="f['username'].errors?.['minlength']">Username must be at least 3 characters</div>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-control"
+          [class.is-invalid]="submitted && f['password'].errors"
+          placeholder="Enter your password"
+        />
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors?.['required']">Password is required</div>
+          <div *ngIf="f['password'].errors?.['minlength']">Password must be at least 6 characters</div>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loading"
+      >
+        <span *ngIf="loading" class="spinner"></span>
+        <span *ngIf="!loading">Sign In</span>
+        <span *ngIf="loading">Signing In...</span>
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <p>Don't have an account? <a href="#" class="link">Contact Administrator</a></p>
+    </div>
+  </div>
+</div>
