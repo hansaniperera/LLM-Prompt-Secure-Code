@@ -1,0 +1,32 @@
+<div class="home-container">
+  <h2>Welcome to the Asset Management System</h2>
+  <p>You have successfully logged in. Explore the system features below.</p>
+  <mat-card role="region" aria-labelledby="dashboard-title">
+    <mat-card-header>
+      <mat-card-title id="dashboard-title">Asset Dashboard</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+          <mat-cell *matCellDef="let asset"> {{ asset.id }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let asset"> {{ asset.name }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="category">
+          <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+          <mat-cell *matCellDef="let asset"> {{ asset.category }} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+          <mat-cell *matCellDef="let asset"> {{ asset.status }} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+  <button mat-raised-button color="warn" (click)="logout()" aria-label="Logout">Logout</button>
+</div>
