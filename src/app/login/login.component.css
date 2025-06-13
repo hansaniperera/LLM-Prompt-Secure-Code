@@ -1,0 +1,40 @@
+.login-container {
+  width: 300px;
+  margin: 80px auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+button:disabled {
+  background-color: #aaa;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+  text-align: center;
+}
