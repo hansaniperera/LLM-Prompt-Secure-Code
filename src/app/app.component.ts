@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  // No styles needed here, styles are in components or global index.html
 })
 export class AppComponent {
-  title = 'LLM-Prompt';
+  title = 'asset-management-system';
 }
