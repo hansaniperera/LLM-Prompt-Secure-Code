@@ -1,0 +1,57 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Asset Management System Login</h2>
+
+    <!-- Login Form using Angular Reactive Forms -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+      <!-- Username Input Field -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          class="form-control"
+          placeholder="Enter your username"
+        >
+        <!-- Validation error message for username -->
+        <div
+          *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
+          class="error-message"
+        >
+          Username is required.
+        </div>
+      </div>
+
+      <!-- Password Input Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Enter your password"
+        >
+        <!-- Validation error message for password -->
+        <div
+          *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+          class="error-message"
+        >
+          Password is required.
+        </div>
+      </div>
+
+      <!-- General Login Error Message -->
+      <div *ngIf="errorMessage" class="alert-message">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="!loginForm.valid" class="submit-button">
+        Login
+      </button>
+    </form>
+  </div>
+</div>

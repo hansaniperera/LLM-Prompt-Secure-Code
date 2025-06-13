@@ -1,0 +1,124 @@
+/* Overall container for centering the login card */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+  font-family: 'Inter', sans-serif; /* Consistent font */
+  padding: 20px; /* Padding for smaller screens */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Styling for the login card itself */
+.login-card {
+  background-color: #ffffff; /* White background */
+  padding: 40px;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  width: 100%;
+  max-width: 400px; /* Max width for desktop views */
+  text-align: center;
+}
+
+/* Title styling */
+.login-title {
+  font-size: 1.8em;
+  color: #333333;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Form group for labels and inputs */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left; /* Align labels and inputs to the left */
+}
+
+.form-group label {
+  display: block; /* Make labels take full width */
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555555;
+  font-size: 0.95em;
+}
+
+/* Input field styling */
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Slightly more rounded inputs */
+  font-size: 1em;
+  color: #333333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  box-sizing: border-box; /* Ensures padding doesn't add to total width */
+}
+
+.form-control:focus {
+  border-color: #007bff; /* Highlight on focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Focus shadow */
+  outline: none; /* Remove default outline */
+}
+
+/* Error message styling */
+.error-message {
+  color: #dc3545; /* Red color for errors */
+  font-size: 0.85em;
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* Alert message for general login failures */
+.alert-message {
+  background-color: #ffebeb;
+  color: #dc3545;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  border: 1px solid #dc3545;
+}
+
+/* Submit button styling */
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #007bff, #0056b3); /* Blue gradient */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #0056b3, #003d80); /* Darker gradient on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.submit-button:disabled {
+  background: #cccccc; /* Grey when disabled */
+  cursor: not-allowed;
+  transform: translateY(0); /* No lift when disabled */
+  opacity: 0.7;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .login-card {
+    padding: 30px 20px;
+    margin: 0 15px; /* Add horizontal margin for very small screens */
+  }
+
+  .login-title {
+    font-size: 1.6em;
+  }
+
+  .form-control, .submit-button {
+    padding: 10px 12px;
+    font-size: 0.95em;
+  }
+}
