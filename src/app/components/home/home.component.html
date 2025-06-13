@@ -1,0 +1,97 @@
+<div class="home-container">
+  <header class="header">
+    <div class="header-content">
+      <div class="logo-section">
+        <i class="fas fa-building"></i>
+        <h1>Asset Management System</h1>
+      </div>
+      <div class="user-section">
+        <div class="user-info" *ngIf="currentUser">
+          <span class="welcome-text">Welcome, {{ currentUser.username }}!</span>
+          <button class="btn-logout" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="dashboard">
+      <h2>Dashboard</h2>
+      <div class="dashboard-grid">
+        <div class="dashboard-card">
+          <div class="card-icon">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <div class="card-content">
+            <h3>IT Assets</h3>
+            <p class="card-number">1,234</p>
+            <p class="card-description">Computers, servers, and IT equipment</p>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="card-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <div class="card-content">
+            <h3>Vehicles</h3>
+            <p class="card-number">56</p>
+            <p class="card-description">Company vehicles and equipment</p>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="card-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <div class="card-content">
+            <h3>Equipment</h3>
+            <p class="card-number">789</p>
+            <p class="card-description">Tools and machinery</p>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <div class="card-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="card-content">
+            <h3>Total Value</h3>
+            <p class="card-number">$2.5M</p>
+            <p class="card-description">Total asset value</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <div class="activity-list">
+          <div class="activity-item">
+            <i class="fas fa-plus-circle activity-icon add"></i>
+            <div class="activity-content">
+              <p><strong>New Asset Added:</strong> Dell Laptop - LAP001</p>
+              <span class="activity-time">2 hours ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <i class="fas fa-edit activity-icon edit"></i>
+            <div class="activity-content">
+              <p><strong>Asset Updated:</strong> Office Printer - PRT003</p>
+              <span class="activity-time">4 hours ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <i class="fas fa-exclamation-triangle activity-icon warning"></i>
+            <div class="activity-content">
+              <p><strong>Maintenance Due:</strong> Server - SRV001</p>
+              <span class="activity-time">1 day ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

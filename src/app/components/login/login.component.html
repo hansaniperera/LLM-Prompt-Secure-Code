@@ -1,0 +1,116 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="logo">
+        <i class="fas fa-building" aria-hidden="true"></i>
+      </div>
+      <h1>Asset Management System</h1>
+      <p>Sign in to your account</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form" novalidate>
+      <!-- Error Message -->
+      <div class="error-message" *ngIf="errorMessage" role="alert" aria-live="polite">
+        <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+        {{ errorMessage }}
+      </div>
+
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username" class="form-label">Username</label>
+        <div class="input-container">
+          <i class="fas fa-user input-icon" aria-hidden="true"></i>
+          <input
+            type="text"
+            id="username"
+            formControlName="username"
+            class="form-control"
+            [class.is-invalid]="hasError('username', 'required') || hasError('username', 'minlength') || hasError('username', 'whitespace')"
+            placeholder="Enter your username"
+            autocomplete="username"
+            [attr.aria-describedby]="hasError('username', 'required') || hasError('username', 'minlength') || hasError('username', 'whitespace') ? 'username-error' : null"
+          />
+        </div>
+        <div 
+          *ngIf="hasError('username', 'required') || hasError('username', 'minlength') || hasError('username', 'whitespace')" 
+          class="invalid-feedback"
+          id="username-error"
+          role="alert"
+        >
+          {{ getErrorMessage('username') }}
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-container">
+          <i class="fas fa-lock input-icon" aria-hidden="true"></i>
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            [class.is-invalid]="hasError('password', 'required') || hasError('password', 'minlength')"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            [attr.aria-describedby]="hasError('password', 'required') || hasError('password', 'minlength') ? 'password-error' : null"
+          />
+          <button
+            type="button"
+            class="password-toggle"
+            (click)="togglePasswordVisibility()"
+            [attr.aria-label]="showPassword ? 'Hide password' : 'Show password'"
+            tabindex="0"
+          >
+            <i [class]="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div 
+          *ngIf="hasError('password', 'required') || hasError('password', 'minlength')" 
+          class="invalid-feedback"
+          id="password-error"
+          role="alert"
+        >
+          {{ getErrorMessage('password') }}
+        </div>
+      </div>
+
+      <!-- Remember Me & Forgot Password -->
+      <div class="form-options">
+        <label class="checkbox-container">
+          <input 
+            type="checkbox" 
+            formControlName="rememberMe"
+            id="rememberMe"
+          />
+          <span class="checkmark"></span>
+          <span class="checkbox-label">Remember me</span>
+        </label>
+        <button 
+          type="button" 
+          class="forgot-password" 
+          (click)="onForgotPassword()"
+        >
+          Forgot Password?
+        </button>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn-login"
+        [disabled]="loading || loginForm.invalid"
+        [attr.aria-label]="loading ? 'Signing in...' : 'Sign in'"
+      >
+        <span *ngIf="loading" class="spinner" aria-hidden="true"></span>
+        <span *ngIf="!loading">Sign In</span>
+        <span *ngIf="loading">Signing In...</span>
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <p>Don't have an account? <button type="button" class="signup-link">Sign up</button></p>
+    </div>
+  </div>
+</div>
