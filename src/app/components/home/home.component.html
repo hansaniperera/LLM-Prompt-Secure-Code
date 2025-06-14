@@ -1,0 +1,44 @@
+<div class="home-container">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <h1>Asset Management System</h1>
+    </div>
+    <div class="nav-user">
+      <span class="welcome-text">Welcome, {{ currentUser?.username }}!</span>
+      <button class="btn btn-outline" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="dashboard">
+      <h2>Dashboard</h2>
+      <p>You have successfully logged into the Asset Management System.</p>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Asset Inventory</h3>
+          <p>Manage and track all your assets</p>
+          <button class="btn btn-primary">View Assets</button>
+        </div>
+        
+        <div class="feature-card">
+          <h3>Reports</h3>
+          <p>Generate comprehensive reports</p>
+          <button class="btn btn-primary">View Reports</button>
+        </div>
+        
+        <div class="feature-card">
+          <h3>Settings</h3>
+          <p>Configure system settings</p>
+          <button class="btn btn-primary">Open Settings</button>
+        </div>
+        
+        <div class="feature-card">
+          <h3>User Management</h3>
+          <p>Manage user accounts and permissions</p>
+          <button class="btn btn-primary">Manage Users</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
