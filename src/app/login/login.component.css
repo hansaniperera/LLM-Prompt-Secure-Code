@@ -1,0 +1,154 @@
+/* src/app/auth/login/login.component.scss */
+
+/* Base container for the login page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background: linear-gradient(135deg, #f0f2f5 0%, #e0e6ed 100%); /* Subtle gradient background */
+  font-family: 'Inter', sans-serif; /* Consistent font */
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Styling for the login card/box */
+.login-card {
+  background-color: #ffffff; /* White background */
+  padding: 40px;
+  border-radius: 12px; /* More pronounced rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+  width: 100%;
+  max-width: 400px; /* Max width for larger screens */
+  text-align: center;
+  box-sizing: border-box;
+  animation: fadeIn 0.8s ease-out; /* Add a fade-in animation */
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title of the login form */
+.login-title {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 1.8em; /* Slightly larger title */
+  font-weight: 600;
+}
+
+/* Form group for labels and input fields */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left; /* Align labels and inputs to the left */
+
+  label {
+    display: block; /* Make labels take full width */
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95em;
+  }
+}
+
+/* Styling for input fields */
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #dcdfe6; /* Light grey border */
+  border-radius: 8px; /* Rounded input fields */
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+  box-sizing: border-box; /* Ensure padding doesn't add to total width */
+
+  &:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Blue glow on focus */
+    outline: none; /* Remove default outline */
+  }
+}
+
+/* Error message styling for validation */
+.error-message {
+  color: #dc3545; /* Red for errors */
+  font-size: 0.85em;
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* Styling for alert messages (e.g., login failure) */
+.alert {
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+  text-align: left;
+  line-height: 1.4;
+
+  &.alert-error {
+    background-color: #fdd; /* Light red background */
+    color: #cc0000; /* Darker red text */
+    border: 1px solid #fbc; /* Red border */
+  }
+}
+
+/* Styling for the login button */
+.login-button {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(45deg, #007bff, #0056b3); /* Blue gradient */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded button */
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Button shadow */
+
+  &:hover {
+    background: linear-gradient(45deg, #0056b3, #003f7f); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+  }
+
+  &:disabled {
+    background: #cccccc; /* Greyed out when disabled */
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 500px) {
+  .login-card {
+    padding: 30px 25px; /* Reduce padding on smaller screens */
+    margin: 15px; /* Add margin to prevent sticking to edges */
+  }
+
+  .login-title {
+    font-size: 1.6em; /* Adjust title size */
+    margin-bottom: 25px;
+  }
+
+  .form-control,
+  .login-button {
+    padding: 10px 12px; /* Smaller padding for inputs/buttons */
+    font-size: 0.95em;
+  }
+}

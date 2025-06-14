@@ -1,0 +1,54 @@
+<!-- src/app/auth/login/login.component.html -->
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Asset Management System Login</h2>
+
+    <!-- Login Form using Angular Reactive Forms -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Username Input Field -->
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          class="form-control"
+          placeholder="Enter your username"
+          required
+        />
+        <!-- Display validation error message for username -->
+        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
+          Username is required.
+        </div>
+      </div>
+
+      <!-- Password Input Field -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Enter your password"
+          required
+        />
+        <!-- Display validation error message for password -->
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+          Password is required.
+        </div>
+      </div>
+
+      <!-- Display general login error message (e.g., invalid credentials) -->
+      <div *ngIf="errorMessage" class="alert alert-error">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="login-button" [disabled]="loginForm.invalid || loading">
+        <span *ngIf="!loading">Login</span>
+        <span *ngIf="loading">Logging in...</span>
+      </button>
+    </form>
+  </div>
+</div>

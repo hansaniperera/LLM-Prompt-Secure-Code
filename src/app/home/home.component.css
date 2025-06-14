@@ -1,0 +1,164 @@
+/* src/app/home/home.component.scss */
+
+/* Base container for the home page */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6f7ff 0%, #cceeff 100%); /* Lighter, calming gradient */
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling for the home page card/box */
+.home-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+  width: 100%;
+  max-width: 600px; /* Wider card for content */
+  text-align: center;
+  box-sizing: border-box;
+  animation: slideInUp 0.8s ease-out; /* Add a slide-in animation */
+}
+
+/* Slide-in animation keyframes */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title of the home page */
+.home-title {
+  color: #2c3e50; /* Darker, professional blue */
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* Welcome message styling */
+.home-message {
+  color: #607d8b; /* Muted grey */
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Section for features */
+.features-section {
+  background-color: #f8fcfd; /* Very light blue background for section */
+  border: 1px solid #e0f2f7;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: left; /* Align feature list to left */
+
+  h3 {
+    color: #34495e;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eceff1;
+    padding-bottom: 10px;
+  }
+
+  ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+      color: #4a6c89;
+      font-size: 1em;
+
+      i {
+        margin-right: 10px;
+        color: #007bff; /* Icon color matching button */
+      }
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    font-style: italic;
+    color: #78909c;
+    font-size: 0.95em;
+  }
+}
+
+/* Logout button styling */
+.logout-button {
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #dc3545, #b32a39); /* Red gradient for logout */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+
+  &:hover {
+    background: linear-gradient(45deg, #b32a39, #8c212c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(220, 53, 69, 0.2);
+  }
+
+  i {
+    margin-right: 8px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-card {
+    padding: 30px;
+  }
+
+  .home-title {
+    font-size: 1.8em;
+  }
+
+  .home-message {
+    font-size: 1em;
+  }
+
+  .features-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-card {
+    padding: 25px 20px;
+    margin: 15px;
+  }
+
+  .home-title {
+    font-size: 1.6em;
+  }
+
+  .home-message {
+    font-size: 0.95em;
+  }
+
+  .logout-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,23 @@
+<!-- src/app/home/home.component.html -->
+<div class="home-container">
+  <div class="home-card">
+    <h2 class="home-title">Welcome to the Asset Management System!</h2>
+    <p class="home-message">You have successfully logged in and can now access all system features.</p>
+
+    <!-- Placeholder for system features -->
+    <div class="features-section">
+      <h3>Key Features:</h3>
+      <ul>
+        <li><i class="fas fa-cubes"></i> Manage Assets</li>
+        <li><i class="fas fa-users-cog"></i> User Management</li>
+        <li><i class="fas fa-chart-line"></i> Reporting & Analytics</li>
+        <li><i class="fas fa-cogs"></i> System Settings</li>
+      </ul>
+      <p>Start by exploring the navigation menu or using the search bar.</p>
+    </div>
+
+    <button class="logout-button" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+  </div>
+</div>

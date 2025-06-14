@@ -1,1 +1,34 @@
+/* src/styles.scss */
 /* You can add global styles to this file, and also import other style files */
+
+/* Import Google Fonts - Inter for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Import Font Awesome for icons (used in home page) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Reset some default browser styles for consistency */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Light background for the entire app */
+  color: #333;
+}
+
+/* Basic box-sizing for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Optional: Styles for main content area if needed, though components usually handle their own layout */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  width: 100%;
+}
