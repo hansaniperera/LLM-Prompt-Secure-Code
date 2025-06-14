@@ -1,0 +1,23 @@
+/* login.component.css */
+.login-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 2em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 12px;
+  box-sizing: border-box;
+}
+button {
+  width: 100%;
+  padding: 10px;
+}
+.error {
+  color: red;
+  margin-top: 10px;
+}
