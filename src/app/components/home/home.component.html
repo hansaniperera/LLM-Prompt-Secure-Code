@@ -1,0 +1,153 @@
+<div class="home-container">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo-section">
+        <i class="fas fa-boxes"></i>
+        <h1>Asset Management</h1>
+      </div>
+      
+      <div class="user-section">
+        <div class="user-info">
+          <span class="welcome-text">{{ getGreeting() }}, {{ currentUser?.firstName }}!</span>
+          <span class="user-role">{{ currentUser?.role }}</span>
+        </div>
+        <div class="user-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <button class="logout-btn" (click)="logout()" title="Logout">
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="dashboard-grid">
+      <!-- Welcome Card -->
+      <div class="card welcome-card">
+        <div class="card-header">
+          <h2>Welcome to Asset Management System</h2>
+          <p>Manage and track your organization's assets efficiently</p>
+        </div>
+        <div class="card-content">
+          <div class="stats-row">
+            <div class="stat-item">
+              <i class="fas fa-clock"></i>
+              <span>{{ currentTime | date:'medium' }}</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-calendar"></i>
+              <span>Last Login: {{ currentUser?.lastLogin | date:'short' || 'First time login' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card actions-card">
+        <div class="card-header">
+          <h3>Quick Actions</h3>
+        </div>
+        <div class="card-content">
+          <div class="action-buttons">
+            <button class="action-btn primary">
+              <i class="fas fa-plus"></i>
+              Add Asset
+            </button>
+            <button class="action-btn secondary">
+              <i class="fas fa-search"></i>
+              Search Assets
+            </button>
+            <button class="action-btn tertiary">
+              <i class="fas fa-chart-bar"></i>
+              View Reports
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon blue">
+            <i class="fas fa-boxes"></i>
+          </div>
+          <div class="stat-content">
+            <h4>Total Assets</h4>
+            <span class="stat-number">1,247</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon green">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="stat-content">
+            <h4>Available</h4>
+            <span class="stat-number">892</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon orange">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="stat-content">
+            <h4>Maintenance</h4>
+            <span class="stat-number">45</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon red">
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <div class="stat-content">
+            <h4>Out of Order</h4>
+            <span class="stat-number">12</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="card activity-card">
+        <div class="card-header">
+          <h3>Recent Activity</h3>
+        </div>
+        <div class="card-content">
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-plus text-green"></i>
+              </div>
+              <div class="activity-content">
+                <p><strong>New Asset Added:</strong> Dell Laptop #DL-2025-001</p>
+                <small>2 hours ago</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-wrench text-orange"></i>
+              </div>
+              <div class="activity-content">
+                <p><strong>Maintenance Scheduled:</strong> Printer HP-001</p>
+                <small>5 hours ago</small>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-check text-blue"></i>
+              </div>
+              <div class="activity-content">
+                <p><strong>Asset Returned:</strong> Projector Sony PJ-15</p>
+                <small>1 day ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
