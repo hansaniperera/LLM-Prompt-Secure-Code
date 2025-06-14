@@ -1,0 +1,34 @@
+<!-- auth/login/login.component.html -->
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <h2>Asset Management Login</h2>
+    
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" formControlName="username">
+      <div *ngIf="loginForm.get('username')?.errors?.['required'] && loginForm.get('username')?.touched"
+           class="error-message">
+        Username is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password">
+      <div *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched"
+           class="error-message">
+        Password is required
+      </div>
+      <div *ngIf="loginForm.get('password')?.errors?.['minlength'] && loginForm.get('password')?.touched"
+           class="error-message">
+        Password must be at least 6 characters
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>
