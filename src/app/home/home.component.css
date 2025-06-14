@@ -1,0 +1,112 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e6f7ff; /* Lighter blue background */
+  font-family: 'Inter', sans-serif;
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.home-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+  width: 100%;
+  max-width: 600px; /* Wider card for more content */
+  text-align: center;
+  border-left: 5px solid #1890ff; /* Accent border */
+}
+
+.welcome-title {
+  font-size: 32px;
+  color: #1890ff; /* Primary blue color */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.welcome-text {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.features-section {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: left;
+  border: 1px solid #eee;
+}
+
+.features-section h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.features-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-section ul li {
+  font-size: 17px;
+  color: #444;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.feature-icon {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.logout-button {
+  padding: 12px 25px;
+  background-color: #ff4d4f; /* Red for logout */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(255, 77, 79, 0.2);
+}
+
+.logout-button:hover {
+  background-color: #cf1322;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .home-card {
+    padding: 25px;
+    margin: 15px;
+  }
+
+  .welcome-title {
+    font-size: 26px;
+  }
+
+  .welcome-text,
+  .features-section ul li {
+    font-size: 16px;
+  }
+
+  .logout-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
